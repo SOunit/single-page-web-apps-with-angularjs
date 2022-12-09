@@ -20,6 +20,8 @@
 
 # week 2 : filters, digest cycle, controller inheritance, and custom services
 
+## filter, digest cycles, and data binding
+
 - filters
   - basic sample
     - `{{var | uppercase }}`
@@ -98,3 +100,73 @@
         $scope.count++;
       }, 2000)
       ```
+
+  - 2-way, 1-way, 1-time binding
+
+## Looping, Controller As Syntax
+
+### Point / Opinion / Summary
+
+- what is the benefit of scope inheritance and controller as syntax?
+
+  - small focused controllers are better than one big controller
+  - how to handle multiple controllers
+  - how to access data in controller
+  - no use for `$scope`
+  - `this` is pointing to controller instance
+    - AngularJS use controller function as constructor function
+
+### lecture memo
+
+- scope inheritance
+  - nest controller
+    - child controller inherit parent controller
+    - child controller can access to parent controller
+      - `$parent`
+- controller as syntax
+  - use `this` pointing to controller instance instead of `$scope` to expose variable to `View`
+
+## creating and configuring custom services
+
+### point
+
+- multiple controllers is good practice
+- custom service is for
+  - share data and code
+- good sample
+  - they share data and logic
+  - constructor functions
+    - ShoppingListAddController
+    - ShoppingListShowController
+    - ShoppingListService
+
+### lesson
+
+- controllers responsibility
+
+  - do
+    - setup initial value for `$scope`
+    - add behaviour to `$scope`
+      - means binding event and update `$scope` value to update View
+  - NOT do
+    - handle business logic
+    - shared data or code
+
+- sample
+
+  ```
+  angular.module("app", [])
+  .controller("ctrl", Ctrl)
+  .service("CustomService", CustomService);
+  ```
+
+  - "CustomService" is the label used in controller DI argument
+  - CustomService function is used as constructor function
+
+- singleton pattern
+
+  - service is singleton
+    - easy to share data across `controllers`
+
+- lazy instantiated
+  - instantiated when it is added to dependency
