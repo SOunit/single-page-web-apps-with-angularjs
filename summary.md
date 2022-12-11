@@ -185,3 +185,38 @@
   - factory
     - not singleton
     - can pass argument
+
+# week3
+
+## asynchronous behavior, promises, ajax in AngularJS
+
+## intro to custom directive
+
+- directive summary
+
+  - directive is an HTML marker AngularJS compile to html
+  - registered factory function must return DDO
+    - DDO is directive definition object
+    - factory function get invoked only once
+
+- syntax
+
+  - template
+  - templateUrl
+  - restrict
+
+- normalization
+
+  - directive("listItemDescription", ListItemDescription)
+    - `listItemDescription` should be lowercase start
+      - translated to list-item-description
+    - `ListItemDescription` should be uppercase
+      - it's constructor function
+  - <list-item-description>
+
+- restrict
+  - AE is default
+    - A - attribute
+    - E - element
+
+## directive APIs, manipulating DOM, transclude
