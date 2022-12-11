@@ -169,4 +169,19 @@
     - easy to share data across `controllers`
 
 - lazy instantiated
+
   - instantiated when it is added to dependency
+
+- factory
+
+  - factory pattern
+    - cental place to produces new objects or functions
+    - can produce anything
+    - can be used to produce dynamically customizable services
+
+- service vs. factory
+  - service
+    - singleton
+  - factory
+    - not singleton
+    - can pass argument
