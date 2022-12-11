@@ -215,8 +215,55 @@
   - <list-item-description>
 
 - restrict
+
   - AE is default
     - A - attribute
+      - only expand function
+      - no content
+      - example
+        - `ng-repeat`
     - E - element
+      - when has content or template
+      - example
+        - `list-item` tag
+
+- isolate scope
+
+## point
+
+- directive can have controller
+- use isolation scope to avoid dependency to parent controller
+- use controller in directive to have independent directive
+  - controller as syntax
+  - scope and binding
+    - `=`
+    - `@`
+    - `<`
+
+## lesson
+
+- to make directive isolate from controller scope
+- can use anywhere, no dependency on controller
+- bidirectional
+  - `=`
+  - sample
+  ```
+  scope{
+    myProp: '=attributeName'
+  }
+  ```
+  ```
+  scope{
+    myProp: '='
+  }
+  ```
+  - `=?`
+    - attribute is optional
+  - `@`
+    - unidirectional
+    - value is string
+  - `<`
+    - one-way binding
+    - better than two-way binding when 2-way is not necessary
 
 ## directive APIs, manipulating DOM, transclude
