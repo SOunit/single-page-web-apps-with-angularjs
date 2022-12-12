@@ -233,6 +233,29 @@
 
 - directive can have controller
 - use isolation scope to avoid dependency to parent controller
+
+  - scope is to get data from outside of directive
+  - scope sample
+
+    - directive
+
+      ```
+      scope: {
+        myProp: '=attributeName'
+      }
+      ```
+
+    - html
+
+      ```
+      <directive attribute-name="some data">
+      ```
+
+    - template
+      ```
+      value from outside: {{myProp}}
+      ```
+
 - use controller in directive to have independent directive
   - controller as syntax
   - scope and binding
