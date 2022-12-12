@@ -247,15 +247,16 @@
 - bidirectional
   - `=`
   - sample
-  ```
-  scope{
-    myProp: '=attributeName'
-  }
-  ```
-  ```
-  scope{
-    myProp: '='
-  }
+    ```
+    scope{
+      myProp: '=attributeName'
+    }
+    ```
+    ```
+    scope{
+      myProp: '='
+    }
+    ```
   ```
   - `=?`
     - attribute is optional
@@ -265,5 +266,13 @@
   - `<`
     - one-way binding
     - better than two-way binding when 2-way is not necessary
+  ```
 
-## directive APIs, manipulating DOM, transclude
+## lesson3 directive APIs, manipulating DOM, transclude
+
+- to execute parent controller method in child directive
+  - use `&`
+  - sample
+    - list data is in parent controller
+    - directive is responsible for display and delete
+      - child directive have to execute parent delete method
