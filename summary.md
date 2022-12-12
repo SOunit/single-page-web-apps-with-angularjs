@@ -294,8 +294,45 @@
 ## lesson3 directive APIs, manipulating DOM, transclude
 
 - to execute parent controller method in child directive
+
   - use `&`
   - sample
     - list data is in parent controller
     - directive is responsible for display and delete
       - child directive have to execute parent delete method
+
+- DOM manipulation and jQuery
+
+  - angular support jQuery wrapper
+    - limited than jQuery
+  - can also use jQuery
+
+- transclusion
+  - sample
+    - dialog box
+    - same behavior
+    - different content
+  - steps
+    - set `transclude: true` in directive definition
+    - wrap with directive
+    - set `ng-transclude` to import content
+
+# lesson4: components, events, modules and routing
+
+## components and component-based architecture
+
+- component
+  - special type of directive with simpler configuration than directives
+  - simpler syntax, wrapping directive
+  - Angular v2 uses component exclusively
+  - component is good practice
+
+## angularJS event system and modules
+
+## introduction to single-page routing with ui-router
+
+## handling data with routing
+
+## nested views and transition events
+
+# lesson5: form validation, testing, restaurant site development
