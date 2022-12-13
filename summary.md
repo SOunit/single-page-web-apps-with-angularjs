@@ -322,12 +322,74 @@
 ## components and component-based architecture
 
 - component
+
   - special type of directive with simpler configuration than directives
   - simpler syntax, wrapping directive
   - Angular v2 uses component exclusively
   - component is good practice
 
+- best practice of component architecture
+
+  - component control their own data and view
+    - use isolation scope
+  - component has well defined API - inputs and outputs
+    - use `<` and `@`
+    - never change property of passed in object or array
+    - output
+      - use `&` for component event callback
+    - pass data to callback through param map `{key: value}`
+  - components have well-defined lifecycle
+    - $onInit
+    - $onChange(changeObj)
+      - changeObj.currentValue
+      - changeObj.previousValue
+    - $postLink
+      - similar to `link` in directive
+    - $onDestroy
+      - when release from memory, like refresh etc.
+  - application is a tree of components
+    - minimum 2-way data binding
+
+- $doCheck
+  - invoked by all digest loop
+  - lifecycle method to update
+  - to avoid using $scope.$watch
+
 ## angularJS event system and modules
+
+- communication between components is difficult
+
+  - like redux in react
+  - singleton service is available but not good approach
+    - all logic is in service? not good
+  - use event system to handle this
+
+- public subscribe design pattern
+
+  - publisher
+    - create event
+  - subscriber
+    - listen to event
+
+- $scope.$emit
+
+  - up scope chain
+
+- $scope.$broadcast
+
+  - down the scope chain
+
+- $scope.$on
+
+  - listen event
+
+- module
+  - separate files
+  - first create module, then components etc.
+  - file name
+    - test.component.js
+    - test.module.js
+    - etc.
 
 ## introduction to single-page routing with ui-router
 
@@ -336,3 +398,13 @@
 ## nested views and transition events
 
 # lesson5: form validation, testing, restaurant site development
+
+## form validation and introduction to testing javascript
+
+## testing AngularJS controllers and services
+
+## testing AngularJS directives and components
+
+## visiting with client, old site overview, restaurant server setup
+
+## coding the restaurant site in AngularJS
